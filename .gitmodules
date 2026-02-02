@@ -1,0 +1,12 @@
+[submodule "module/angr"]
+	path = module/angr
+	url = https://github.com/LeisureGensoul/angr
+[submodule "module/manticore"]
+	path = module/manticore
+	url = https://github.com/LeisureGensoul/manticore
+[submodule "module/pathbeaver"]
+	path = module/pathbeaver
+	url = https://github.com/LeisureGensoul/pathbeaver
+[submodule "module/X86-64-semantics"]
+	path = module/X86-64-semantics
+	url = https://github.com/LeisureGensoul/X86-64-semantics
