@@ -10,3 +10,18 @@
 [submodule "module/X86-64-semantics"]
 	path = module/X86-64-semantics
 	url = https://github.com/LeisureGensoul/X86-64-semantics
+[submodule "module/angr-submodule/archinfo"]
+	path = module/angr-submodule/archinfo
+	url = https://github.com/LeisureGensoul/archinfo
+[submodule "module/angr-submodule/pyvex"]
+	path = module/angr-submodule/pyvex
+	url = https://github.com/LeisureGensoul/pyvex
+[submodule "module/angr-submodule/cle"]
+	path = module/angr-submodule/cle
+	url = https://github.com/LeisureGensoul/cle
+[submodule "module/angr-submodule/claripy"]
+	path = module/angr-submodule/claripy
+	url = https://github.com/LeisureGensoul/claripy
+[submodule "module/angr-submodule/unicorn"]
+	path = module/angr-submodule/unicorn
+	url = https://github.com/LeisureGensoul/unicorn
