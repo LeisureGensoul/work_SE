@@ -20,6 +20,7 @@ RUN set -eux; \
     apt-get -y upgrade; \
     apt-get install -y --no-install-recommends \
       build-essential \
+      clang \
       git \
       ca-certificates \
       curl \
@@ -37,11 +38,11 @@ RUN set -eux; \
     git config --global user.email "gensoul030929@outlook.com"
 
 # clone 主仓库并递归拉子模块
-WORKDIR /root
+WORKDIR /workspace
 RUN set -eux; \
-    git clone https://github.com/LeisureGensoul/work_SE.git; \
-    cd work_SE; \
-    git submodule update --init
+    git clone https://github.com/LeisureGensoul/work_SE.git /workspace/work_SE; \
+    cd /workspace/work_SE; \
+    git submodule update --init --recursive
 
 # 安装 node/npm + codex（更稳：再加一次 update；apt 已配置重试）
 RUN set -eux; \
@@ -50,9 +51,11 @@ RUN set -eux; \
     npm i -g @openai/codex; \
     rm -rf /var/lib/apt/lists/*
 
-CMD ["/bin/bash"]
+WORKDIR /workspace/work_SE
 
 # 1. docker build -t work_se-dev .
 # 2. docker build -t work_se-dev --build-arg UBUNTU_MIRROR=http://azure.archive.ubuntu.com/ubuntu --build-arg UBUNTU_SECURITY_MIRROR=http://security.ubuntu.com/ubuntu .
 
 # 3. docker container run --name work_SE -it work_se-dev bash
+
+CMD ["/bin/bash"]
